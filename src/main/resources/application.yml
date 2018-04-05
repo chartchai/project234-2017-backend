@@ -2,3 +2,5 @@ graphql:
   servlet:
     corsEnabled: true
     enabled: true
+physicalImageLocation: /temp/
+imageServer: http://localhost:8080/images/

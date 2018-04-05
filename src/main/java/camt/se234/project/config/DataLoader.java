@@ -1,0 +1,27 @@
+package camt.se234.project.config;
+
+
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Component;
+
+import javax.transaction.Transactional;
+
+/**
+ * ใช้สำหรับสร้างข้อมูลเบื้องต้น เช่น Theos1CufData, Segment, Scene เพื่อใช้ทดสอบระบบ
+ */
+@Slf4j
+@Component
+public class DataLoader implements ApplicationRunner {
+
+
+    @Override
+    public void run(ApplicationArguments applicationArguments) throws Exception {
+
+    }
+}
