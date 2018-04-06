@@ -23,3 +23,9 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+#add special file
+!src/main/resources/*/*
+
+**/~*
+#logfile

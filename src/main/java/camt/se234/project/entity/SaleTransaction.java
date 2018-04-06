@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 @Data
@@ -12,9 +13,8 @@ import javax.persistence.Id;
 public class SaleTransaction {
     @Id
     Long id;
+    String transactionId;
+    @OneToOne
     Product product;
     int amount;
-    public double getTotalPrice(){
-        return 0;
-    }
 }
