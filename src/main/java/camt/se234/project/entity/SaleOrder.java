@@ -3,11 +3,9 @@ package camt.se234.project.entity;
 import lombok.Builder;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -15,10 +13,12 @@ import java.util.List;
 @Data
 public class SaleOrder {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
-    String SaleOrderId;
-    @OneToMany
-    List<SaleTransaction> transactions;
+    String saleOrderId;
+    @Builder.Default
+    @OneToMany(mappedBy = "order")
+    List<SaleTransaction> transactions = new ArrayList<>();
     public double getTotalPrice(){
         return 0;
     }

@@ -8,6 +8,7 @@ graphql:
     enabled: true
 physicalImageLocation: /temp/
 imageServer: http://localhost:8080/images/
+dataSourceFile: xlsfile/data.xlsx
 ---
 spring:
   profiles: inMemoryDB
