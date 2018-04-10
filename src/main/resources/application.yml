@@ -1,6 +1,7 @@
 spring:
   profiles:
     active:
+      - local
       - inMemoryDB
 graphql:
   servlet:
@@ -9,6 +10,7 @@ graphql:
 physicalImageLocation: /temp/
 imageServer: http://localhost:8080/images/
 dataSourceFile: xlsfile/data.xlsx
+linux: false
 ---
 spring:
   profiles: inMemoryDB
