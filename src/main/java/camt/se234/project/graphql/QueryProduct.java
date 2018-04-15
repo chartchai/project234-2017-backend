@@ -3,6 +3,8 @@ package camt.se234.project.graphql;
 import camt.se234.project.entity.Product;
 import camt.se234.project.entity.SaleOrder;
 import camt.se234.project.entity.SaleTransaction;
+import camt.se234.project.entity.User;
+import camt.se234.project.service.AuthenticationService;
 import camt.se234.project.service.ProductService;
 import camt.se234.project.service.SaleOrderService;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
@@ -17,6 +19,8 @@ public class QueryProduct  implements GraphQLQueryResolver {
     ProductService productService;
     @Autowired
     SaleOrderService saleOrderService;
+    @Autowired
+    AuthenticationService authenticationService;
     public List<Product> getProducts(){
         return productService.getAvailableProducts();
     }
@@ -25,4 +29,5 @@ public class QueryProduct  implements GraphQLQueryResolver {
         return null;
     }
     public List<SaleOrder> getSaleOrders(){return saleOrderService.getSaleOrders();};
+    public User getUser(String username,String password){return authenticationService.authenticate(username,password);}
 }
