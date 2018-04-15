@@ -14,7 +14,7 @@ public class QueryProduct  implements GraphQLQueryResolver {
     @Autowired
     ProductService productService;
     public List<Product> getProducts(){
-        return productService.getAllProducts();
+        return productService.getAvailableProducts();
     }
 
     public List<SaleTransaction> getSaleTransactions(){
