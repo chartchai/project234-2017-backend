@@ -34,12 +34,16 @@ input inputOrder {
 }
 
 input inputSaleTransaction{
-    id:Int
+
     amount: Int
     product: inputProduct
 }
 
 input inputProduct{
     id: ID
-
+    productId: String
+    name: String
+    description: String
+    imageLocation: String
+    price: Float
 }
