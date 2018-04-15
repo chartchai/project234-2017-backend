@@ -26,6 +26,7 @@ type SaleOrder{
     id: ID
     saleOrderId: String
     transactions: [SaleTransaction]
+    totalPrice: Float
 }
 input inputOrder {
 

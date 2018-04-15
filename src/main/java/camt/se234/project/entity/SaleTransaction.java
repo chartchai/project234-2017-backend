@@ -18,10 +18,11 @@ public class SaleTransaction {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
     String transactionId;
-    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+
     @ManyToOne
+    @JoinColumn(name = "order_id")
     SaleOrder order;
-    @OneToOne
+    @OneToOne (fetch = FetchType.EAGER)
     Product product;
     int amount;
 }

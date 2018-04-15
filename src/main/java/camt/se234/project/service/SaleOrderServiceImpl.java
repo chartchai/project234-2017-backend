@@ -2,9 +2,11 @@ package camt.se234.project.service;
 
 import camt.se234.project.dao.OrderDao;
 import camt.se234.project.entity.SaleOrder;
+import camt.se234.project.entity.SaleTransaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -16,8 +18,15 @@ public class SaleOrderServiceImpl implements SaleOrderService {
     }
 
     @Override
+    @Transactional
     public SaleOrder addSaleOrder(SaleOrder order) {
-        return orderDao.addOrder(order);
+        SaleOrder saleOrder = orderDao.addOrder(order);
+        for (SaleTransaction transaction :
+                saleOrder.getTransactions()) {
+            transaction.setOrder(saleOrder);
+
+        }
+        return saleOrder;
     }
 
     @Override

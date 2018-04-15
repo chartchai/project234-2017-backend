@@ -5,6 +5,7 @@ schema {
 type Query{
     products:[Product]
     saleTransactions:[SaleTransaction]
+    saleOrders: [SaleOrder]
 }
 
 type Mutation{
